@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Universe</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    </head>
+    <body>
+        <% if(currentUser){ %>
+        <div class="navbar navbar-default">
+            <ul nav navbar-nav navbar-right>
+                <li>Login as admin: <%= currentUser.username %></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+        <% } %>

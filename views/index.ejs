@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1><a href="/">Welcome to Universe</a></h1>
+            <p>View stars from all over the universe.
+            <a class="btn btn-primary" href='/stars/new'>Add New Star</a></p>
+        </div>
+    </div>
+    <div class="grid-container">
+        <% stars.forEach(function(stars){ %>
+            <div class="box">
+                <div class="imgBox">
+                    <img src='<%= stars.image %>'>
+                </div>
+                <div class="overlay">
+                    <div class="content">
+                        <h4><%= stars.name %></h4>
+                        <p><%= stars.distance %></p>
+                        <a href="/stars/<%= stars._id %>" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include partials/footer %>

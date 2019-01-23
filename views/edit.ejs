@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Universe - edit</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/newEdit.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="contain">
+                    <h1>Edit <%= stars.name %></h1>
+                    <form action="/stars/<%= stars._id %>?_method=PUT" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="name" value="<%= stars.name %>">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="image" value="<%= stars.image %>">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="distance" value="<%= stars.distance %>">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="description" rows="8" placeholder="description"><%= stars.description %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                        </div>
+                    </form>
+                    <a href='/stars'>Go Back</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="backgroundImg">
+            <img src="<%= stars.image %>">
+        </div>
+
+<% include partials/footer %>

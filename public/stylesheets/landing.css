@@ -1,0 +1,104 @@
+body {
+    background-color: #000;
+}
+
+#landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+#landing-header h1 {
+    color: #fff;
+}
+
+#landing-header a {
+    text-decoration: none;
+    font-size: 20px
+}
+
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imgAnimation 50s linear infinite; 
+}
+
+/*   Slide images   */
+
+.slideshow li:nth-child(1){
+    background-image: url(https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1f8f8a17194030f5bf45f3e14fee725e&auto=format&fit=crop&w=1054&q=80);
+}
+
+.slideshow li:nth-child(2){
+    background-image: url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-0.3.5&s=95ce75e9d08a87493ed54df5c353542d&auto=format&fit=crop&w=1052&q=80);
+    animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3){
+    background-image: url(https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2d8d433acb5dbf4d2478af28854ff90a&auto=format&fit=crop&w=1050&q=80);
+    animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4){
+    background-image: url(https://images.pexels.com/photos/41951/solar-system-emergence-spitzer-telescope-telescope-41951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    animation-delay: 30s;
+}
+
+.slideshow li:nth-child(5){
+    background-image: url(https://images.unsplash.com/photo-1446776858070-70c3d5ed6758?ixlib=rb-0.3.5&s=2424e4c6f15be1ee6f214c59ef3d19cd&auto=format&fit=crop&w=1052&q=80);
+    animation-delay: 40s;
+}
+
+/*   Animation   */
+
+@keyframes imgAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+}
+
+/*   Older browser support   */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+} 
+
+/*   Hover   */
+#landing-header a:hover {
+    text-decoration: underline;
+    color: #468;
+}
